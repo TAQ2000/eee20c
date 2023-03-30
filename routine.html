@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr {
+            background-color: lightGrey;
+        }
+
+        tr:nth-child(2n) {
+            background-color: rgb(143, 143, 143);
+        }
+    </style>
+</head>
+
+<body>
+    <table></table>
+    <script>
+        fetch('https://script.googleusercontent.com/macros/echo?user_content_key=e_9cWvv4IWaq1d0j5PsB8VVO9M80xQloRkx_mi6VjS7528-OEAJsTmZTrzv69RDZQAEb-l9Ajjz0gqJW8LaF3OkPgbcVqBONm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnHFZ2JeULhXWqdfX8DO5kbUzlagdJRZpdLI6zMYPnlkwCDSNIKdpwVh5iz2KH4dFFs8ThnNR7x9ETdJbk6H3lwAOAj8p0uBDjNz9Jw9Md8uu&lib=Ms7JOeu_HquRh8IIYV7pr76y9rZusWOKY')
+            .then(res => res.json())
+            .then(data => {
+                let tr = data.content.reduce((prev, cur) => {
+                    let td = cur.map(e => `<td>${e}</td>`)
+                    return prev + `<tr>${td.join("")}</tr>`
+                }, "\r")
+                document.querySelector("table").innerHTML = tr;
+
+            });
+    </script>
+</body>
+
+</html>
