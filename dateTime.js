@@ -1,13 +1,13 @@
 function showDate() {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = now.getMonth() + 1; // add 1 because January is 0
-    const day = now.getDate();
-    return `Date: ${year}-${month}-${day}`
+    const date = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const fullDate = date.toLocaleDateString('en-US', options);
+    return `Date: ${fullDate}`
 }
 function showTime() {
     const date = new Date();
-    const time = date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    const options = { hour: 'numeric', minute: 'numeric', hour12: true };
+    const time = date.toLocaleString('en-US', options);
     return `Time: ${time}`;
 }
 
