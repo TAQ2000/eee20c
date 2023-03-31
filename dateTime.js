@@ -6,11 +6,9 @@ function showDate() {
     return `Date: ${year}-${month}-${day}`
 }
 function showTime() {
-    const now = new Date();
-    const hour = now.getHours();
-    const minute = now.getMinutes();
-    const second = now.getSeconds();
-    return `Time: ${hour}:${minute}:${second}`
+    const date = new Date();
+    const time = date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    return `Time: ${time}`;
 }
 
 const date = showDate();
