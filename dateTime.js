@@ -11,12 +11,14 @@ function showTime() {
     return `Time: ${time}`;
 }
 
-const date = showDate();
-const time = showTime();
-const container = document.getElementById('div0');
-const dateElement = document.createElement('p')
-const timeElement = document.createElement('p')
-dateElement.textContent = date;
-container.appendChild(dateElement);
-timeElement.textContent = time;
-container.appendChild(timeElement);
+{
+    const date = showDate();
+    const time = showTime();
+    const container = document.getElementById('div0');
+    const dateElement = document.createElement('p')
+    const timeElement = document.createElement('p')
+    dateElement.textContent = date;
+    container.appendChild(dateElement);
+    timeElement.textContent = time;
+    container.appendChild(timeElement);
+}
