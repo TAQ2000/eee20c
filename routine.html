@@ -5,32 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        tr {
-            background-color: lightGrey;
+    <title>Complete Routine</title>
+    <script>
+        const allowedReferrer = 'http://taq2000.github.io/eee20c/dailyRoutine';
+        const referrer = document.referrer;
+        if (referrer === '' && !referrer.startsWith(allowedReferrer)) {
+            window.location.replace(allowedReferrer);
+        } else if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
+            window.location.replace(allowedReferrer);
         }
-
-        tr:nth-child(2n) {
-            background-color: rgb(143, 143, 143);
-        }
-    </style>
+    </script>
 </head>
 
 <body>
-    <table></table>
+    <select id="list">
+        <option value="1">Saturday</option>
+        <option value="2">Sunday</option>
+        <option value="3">Monday</option>
+        <option value="4">Tuesday</option>
+        <option value="5">Wednesday</option>
+        <option value="6">Thursday</option>
+        <option value="7">Friday</option>
+    </select>
+    <div id="div1"><p id="p1"></p><ul id="ul1"></ul></div>
+    <div id="div2"><p id="p2"></p><ul id="ul2"></ul></div>
+    <div id="div3"><p id="p3"></p><ul id="ul3"></ul></div>
+    <div id="div4"><p id="p4"></p><ul id="ul4"></ul></div>
+    <div id="div5"><p id="p5"></p><ul id="ul5"></ul></div>
+    <div id="div6"><p id="p6"></p><ul id="ul6"></ul></div>
+    <div id="div7"><p id="p7"></p><ul id="ul7"></ul></div>
     <script>
-        fetch('https://script.googleusercontent.com/macros/echo?user_content_key=e_9cWvv4IWaq1d0j5PsB8VVO9M80xQloRkx_mi6VjS7528-OEAJsTmZTrzv69RDZQAEb-l9Ajjz0gqJW8LaF3OkPgbcVqBONm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnHFZ2JeULhXWqdfX8DO5kbUzlagdJRZpdLI6zMYPnlkwCDSNIKdpwVh5iz2KH4dFFs8ThnNR7x9ETdJbk6H3lwAOAj8p0uBDjNz9Jw9Md8uu&lib=Ms7JOeu_HquRh8IIYV7pr76y9rZusWOKY')
-            .then(res => res.json())
-            .then(data => {
-                let tr = data.content.reduce((prev, cur) => {
-                    let td = cur.map(e => `<td>${e}</td>`)
-                    return prev + `<tr>${td.join("")}</tr>`
-                }, "\r")
-                document.querySelector("table").innerHTML = tr;
-
-            });
+        const today = new Date();
+        const day = (today.getDay() + 1) % 7 + 1;
+        const value = document.getElementById("list");
+        const optionSelect = value.options[day - 1];
+        optionSelect.selected = true;
     </script>
+    <script src="fetchCompleteRoutine.js"></script>
 </body>
-
 </html>
