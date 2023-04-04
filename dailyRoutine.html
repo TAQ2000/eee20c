@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Routine</title>
+    <script>
+        const allowedReferrer = 'https://taq2000.github.io/eee20c/index.html';
+        const referrer = document.referrer;
+        if (referrer === '' && !referrer.startsWith(allowedReferrer)) {
+            window.location.replace(allowedReferrer);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div0"></div>
+    <div id="div1"><p id="p1"></p><ul id="ul1"></ul></div>
+    <div id="div2"><p id="p2"></p><ul id="ul2"></ul></div>
+    <div id="div3"><p id="p3"></p><ul id="ul3"></ul></div>
+    <div id="div4"><p id="p4"></p><ul id="ul4"></ul></div>
+    <div id="div5"><p id="p5"></p><ul id="ul5"></ul></div>
+    <div id="div6"><p id="p6"></p><ul id="ul6"></ul></div>
+    <div id="div7"><p id="p7"></p><ul id="ul7"></ul></div>
+    <script src="dateTime.js"></script>
+    <script src="fetchRoutine.js"></script>
+</body>
+
+</html>
