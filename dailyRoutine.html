@@ -11,6 +11,8 @@
         const referrer = document.referrer;
         if (referrer === '' && !referrer.startsWith(allowedReferrer)) {
             window.location.replace(allowedReferrer);
+        } else if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
+            window.location.replace(allowedReferrer);
         }
     </script>
 </head>
