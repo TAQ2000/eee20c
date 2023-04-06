@@ -26,10 +26,10 @@ for (let i = 1; i < len; i++) {
     uli.appendChild(li1);
     const indx = data.content[day][i];
     if (isNum(indx)) {
-        li1.textContent = `${data.content[10][0]}: ${data.content[indx - 1][0]}`;
-        li2.textContent = `${data.content[10][1]}: ${data.content[indx - 1][1]}`;
-        li3.textContent = `${data.content[10][2]}: ${data.content[indx - 1][2]}`;
-        li4.textContent = `${data.content[10][3]}: ${data.content[indx - 1][3]}`;
+        li1.textContent = `${data.content[9][0]}: ${data.content[indx - 1][0]}`;
+        li2.textContent = `${data.content[9][1]}: ${data.content[indx - 1][1]}`;
+        li3.textContent = `${data.content[9][2]}: ${data.content[indx - 1][2]}`;
+        li4.textContent = `${data.content[9][3]}: ${data.content[indx - 1][3]}`;
         uli.appendChild(li1);
         uli.appendChild(li2);
         uli.appendChild(li3);
