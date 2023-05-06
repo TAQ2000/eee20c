@@ -6,7 +6,7 @@ const data = JSON.parse(localStorage.getItem('data'));
 console.log(data)
 
 function showRoutine(day) {
-    const len = data.content[0].length;
+    const len = 8;
     for (let i = 1; i < len; i++) {
         const container1 = document.getElementById(`p${i}`);
         const dayElement1 = document.createElement('p');
@@ -33,7 +33,7 @@ function showRoutine(day) {
 }
 
 function removeRoutine() {
-    const len = data.content[0].length;
+    const len = 8;
     for (let i = 1; i < len; i++) {
         const container1 = document.getElementById(`p${i}`);
         while (container1.firstChild) {
