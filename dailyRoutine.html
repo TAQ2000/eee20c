@@ -9,24 +9,78 @@
     <script>
         const allowedReferrer = 'https://taq2000.github.io/eee20c';
         const referrer = document.referrer;
-        if (referrer === '' && !referrer.startsWith(allowedReferrer)) {
+        if (referrer === '') { //  && !referrer.startsWith(allowedReferrer)
             window.location.replace(allowedReferrer);
         } else if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
             window.location.replace(allowedReferrer);
         }
     </script>
+    <style>
+        nav {
+            background-color: #3e0000;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            display: inline-block;
+        }
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav li a:hover {
+            background-color: #870202;
+        }
+
+        .container {
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .container2 {
+            background-color: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: large;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="div0"></div>
-    <a href="https://taq2000.github.io/eee20c/routine">Click to See Complete Routine</a>
-    <div id="div1"><p id="p1"></p><ul id="ul1"></ul></div>
-    <div id="div2"><p id="p2"></p><ul id="ul2"></ul></div>
-    <div id="div3"><p id="p3"></p><ul id="ul3"></ul></div>
-    <div id="div4"><p id="p4"></p><ul id="ul4"></ul></div>
-    <div id="div5"><p id="p5"></p><ul id="ul5"></ul></div>
-    <div id="div6"><p id="p6"></p><ul id="ul6"></ul></div>
-    <div id="div7"><p id="p7"></p><ul id="ul7"></ul></div>
+    <header>
+        <div class="logo">
+            <a href="#"><img src="eee_logo.png" alt="Logo" width="1080px" height="200px"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Today's Schedule</a></li>
+                <li><a href="events.html">Upcoming Events</a></li>
+                <li><a href="routine.html">Weekly Routine</a></li>
+                <li><a href="#">Class Test Details</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="div0" class="container2"></div>
+    <div id="div1" class="container"><p id="p1"></p><ul id="ul1"></ul></div>
+    <div id="div2" class="container"><p id="p2"></p><ul id="ul2"></ul></div>
+    <div id="div3" class="container"><p id="p3"></p><ul id="ul3"></ul></div>
+    <div id="div4" class="container"><p id="p4"></p><ul id="ul4"></ul></div>
+    <div id="div5" class="container"><p id="p5"></p><ul id="ul5"></ul></div>
+    <div id="div6" class="container"><p id="p6"></p><ul id="ul6"></ul></div>
+    <div id="div7" class="container"><p id="p7"></p><ul id="ul7"></ul></div>
     <script src="dateTime.js"></script>
     <script src="fetchRoutine.js"></script>
 </body>
