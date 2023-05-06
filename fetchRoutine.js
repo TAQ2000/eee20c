@@ -12,7 +12,7 @@ const container = document.getElementById('div0');
 const dayElement = document.createElement('p')
 dayElement.textContent = `${data.content[0][0]}: ${data.content[day][0]}`;
 container.appendChild(dayElement);
-const len = data.content[0].length;
+const len = 8;
 for (let i = 1; i < len; i++) {
     const container1 = document.getElementById(`p${i}`);
     const dayElement1 = document.createElement('p');
