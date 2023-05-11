@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Tests</title>
+    <script>
+        const allowedReferrer = 'https://taq2000.github.io/eee20c';
+        const referrer = document.referrer;
+        if (referrer === '') {
+            window.location.replace(allowedReferrer);
+        } else if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
+            window.location.replace(allowedReferrer);
+        }
+    </script>
+    <style>
+        nav {
+            background-color: #3e0000;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            display: inline-block;
+        }
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav li a:hover {
+            background-color: #870202;
+        }
+
+        .container {
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 10px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            font-size: 1em;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+    
+        th, td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    
+        thead th {
+            background-color: #411616;
+            color: #fff;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    
+        tr:hover {
+            background-color: #e6e6e6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"><img src="eee_logo.png" alt="Logo" style="width: 100%;"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dailyRoutine.html">Today's Schedule</a></li>
+                <li><a href="events.html">Upcoming Events</a></li>
+                <li><a href="routine.html">Weekly Routine</a></li>
+                <li><a style="background-color:#870202;">Class Test Details</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <br>
+    
+    <table id="myTable">
+        <tbody>
+        </tbody>
+    </table>
+    
+    <script>
+        const data = JSON.parse(localStorage.getItem('data'));
+
+        const table = document.getElementById('myTable');
+        const thead = table.createTHead();
+        const hrow = thead.insertRow();
+        for (let i = 0; i < 8; i++) {
+            if (i == 0 || i == 1 || (i >= 4 && i <= 7)) {
+                const header = document.createElement('th');
+                header.innerText = data.content[9][i];
+                hrow.appendChild(header);
+            }
+        }
+
+        for (let i = 10; i < 15; i++) {
+            const row = table.insertRow();
+            for (let j = 0; j < 8; j++) {
+                if (j == 0 || j == 1) {
+                    const cell = document.createElement('td');
+                    cell.innerText = data.content[i][j];
+                    row.appendChild(cell);
+                }
+                if (j >= 4 && j <= 7) {
+                    const cell = document.createElement('td');
+                    if (data.content[i][j]) {
+                        cell.innerHTML = "&#10004";
+                    }
+                    row.appendChild(cell);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
