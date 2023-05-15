@@ -96,6 +96,13 @@
         <tbody>
         </tbody>
     </table>
+
+    <br>
+    
+    <table id="myTable2">
+        <tbody>
+        </tbody>
+    </table>
     
     <script>
         const data = JSON.parse(localStorage.getItem('data'));
@@ -127,6 +134,44 @@
                     row.appendChild(cell);
                 }
             }
+        }
+
+        const table2 = document.getElementById('myTable2');
+        const thead2 = table2.createTHead();
+        const hrow2 = thead2.insertRow();
+        for (let i = 0; i < 4; i++) {
+            const header = document.createElement('th');
+            header.innerText = data.content[29][i];
+            hrow2.appendChild(header);
+        }
+
+        let len = data.content.length;
+        for (let i = len - 1; i >= 30; i--) {
+            const row = table2.insertRow();
+            if (data.content[i][4]) {
+                row.style.backgroundColor = 'lightgreen';
+            }
+            const date = new Date(data.content[i][0]);
+            console.log(date)
+            const options1 = { year: 'numeric', month: 'long', day: 'numeric' };
+            const fullDate = date.toLocaleDateString('en-US', options1);
+            const cell1 = document.createElement('td');
+            cell1.innerText = fullDate;
+            row.appendChild(cell1);
+            const temp_time = new Date(data.content[i][1]);
+            const time = new Date(temp_time.getTime() - 12 * 60 * 1000);
+            console.log(time)
+            const options2 = { hour: 'numeric', minute: 'numeric', hour12: true };
+            const fullTime = time.toLocaleTimeString('en-US', options2);
+            const cell2 = document.createElement('td');
+            cell2.innerText = fullTime;
+            row.appendChild(cell2);
+            const cell3 = document.createElement('td');
+            cell3.innerText = data.content[i][2];
+            row.appendChild(cell3);
+            const cell4 = document.createElement('td');
+            cell4.innerText = data.content[i][3];
+            row.appendChild(cell4);
         }
     </script>
 </body>
