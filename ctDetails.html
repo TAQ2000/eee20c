@@ -152,7 +152,6 @@
                 row.style.backgroundColor = 'lightgreen';
             }
             const date = new Date(data.content[i][0]);
-            console.log(date)
             const options1 = { year: 'numeric', month: 'long', day: 'numeric' };
             const fullDate = date.toLocaleDateString('en-US', options1);
             const cell1 = document.createElement('td');
@@ -160,7 +159,6 @@
             row.appendChild(cell1);
             const temp_time = new Date(data.content[i][1]);
             const time = new Date(temp_time.getTime() - 12 * 60 * 1000);
-            console.log(time)
             const options2 = { hour: 'numeric', minute: 'numeric', hour12: true };
             const fullTime = time.toLocaleTimeString('en-US', options2);
             const cell2 = document.createElement('td');
