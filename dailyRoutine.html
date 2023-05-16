@@ -14,6 +14,10 @@
         } else if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
             window.location.replace(allowedReferrer);
         }
+        
+        setInterval(function () {
+            location.reload();
+        }, 10 * 60 * 1000);
     </script>
     <style>
         nav {
