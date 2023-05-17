@@ -76,6 +76,19 @@
             margin: 10px;
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
+        
+        .container2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .routine {
+            font-size: medium;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: brown;
+            text-decoration: none;
+        }
 
     </style>
 </head>
@@ -83,7 +96,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="#"><img src="eee_logo.png" alt="Logo" style="width: 100%;"></a>
+            <img src="eee_logo.png" alt="Logo" style="width: 100%;">
         </div>
         <nav>
             <ul>
@@ -94,15 +107,18 @@
             </ul>
         </nav>
     </header>
-    <select id="list">
-        <option value="1">Saturday</option>
-        <option value="2">Sunday</option>
-        <option value="3">Monday</option>
-        <option value="4">Tuesday</option>
-        <option value="5">Wednesday</option>
-        <option value="6">Thursday</option>
-        <option value="7">Friday</option>
-    </select>
+    <div class="container2">
+        <select id="list">
+            <option value="1">Saturday</option>
+            <option value="2">Sunday</option>
+            <option value="3">Monday</option>
+            <option value="4">Tuesday</option>
+            <option value="5">Wednesday</option>
+            <option value="6">Thursday</option>
+            <option value="7">Friday</option>
+        </select>
+        <a href="routineC.jpg" target="_blank" class="routine">Click to see complete routine</a>
+    </div>
     <div id="div1" class="container"><p id="p1"></p><ul id="ul1"></ul></div>
     <div id="div2" class="container"><p id="p2"></p><ul id="ul2"></ul></div>
     <div id="div3" class="container"><p id="p3"></p><ul id="ul3"></ul></div>
