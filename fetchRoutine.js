@@ -13,19 +13,21 @@ const dayElement = document.createElement('p')
 dayElement.textContent = `${data.content[0][0]}: ${data.content[day][0]}`;
 container.appendChild(dayElement);
 const len = 8;
+var count = 0;
 for (let i = 1; i < len; i++) {
-    const container1 = document.getElementById(`p${i}`);
-    const dayElement1 = document.createElement('p');
-    dayElement1.textContent = `${data.content[0][i]}`;
-    container1.appendChild(dayElement1);
-    const uli = document.getElementById(`ul${i}`);
-    const li1 = document.createElement('li');
-    const li2 = document.createElement('li');
-    const li3 = document.createElement('li');
-    const li4 = document.createElement('li');
-    uli.appendChild(li1);
-    const indx = data.content[day][i];
-    if (isNum(indx)) {
+    if(isNum(data.content[day][i])) {
+        count++;
+        const container1 = document.createElement('div');
+        container1.classList.add('container');
+        const dayElement1 = document.createElement('p');
+        dayElement1.textContent = `${data.content[0][i]}`;
+        container1.appendChild(dayElement1);
+        const uli = document.createElement('ul');
+        const li1 = document.createElement('li');
+        const li2 = document.createElement('li');
+        const li3 = document.createElement('li');
+        const li4 = document.createElement('li');
+        const indx = data.content[day][i];
         li1.textContent = `${data.content[9][0]}: ${data.content[indx - 1][0]}`;
         li2.textContent = `${data.content[9][1]}: ${data.content[indx - 1][1]}`;
         li3.textContent = `${data.content[9][2]}: ${data.content[indx - 1][2]}`;
@@ -34,5 +36,15 @@ for (let i = 1; i < len; i++) {
         uli.appendChild(li2);
         uli.appendChild(li3);
         uli.appendChild(li4);
+        container1.appendChild(uli);
+        document.body.appendChild(container1);
     }
+}
+if (!count) {
+    const container1 = document.createElement('div');
+    container1.classList.add('container');
+    const dayElement1 = document.createElement('p');
+    dayElement1.textContent = 'No class today!!! "\u{1F920}"';
+    container1.appendChild(dayElement1);
+    document.body.appendChild(container1);
 }
