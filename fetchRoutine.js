@@ -20,7 +20,7 @@ for (let i = 1; i < len; i++) {
         const container1 = document.createElement('div');
         container1.classList.add('container');
         const dayElement1 = document.createElement('p');
-        dayElement1.textContent = `${data.content[0][i]}`;
+        dayElement1.textContent = `${data.content[0][i]}`.slice(1,-1);
         container1.appendChild(dayElement1);
         const uli = document.createElement('ul');
         const li1 = document.createElement('li');
