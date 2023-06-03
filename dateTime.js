@@ -1,5 +1,8 @@
 function showDate() {
-    const date = new Date();
+    var date = new Date();
+    if (date.getHours() > 17) {
+        date.setDate(date.getDate() + 1);
+    }
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const fullDate = date.toLocaleDateString('en-US', options);
     return `Date: ${fullDate}`
@@ -12,13 +15,20 @@ function showTime() {
 }
 
 {
+    var dt = new Date();
+    let flag = 1;
+    if (dt.getHours() > 17) {
+        flag = 0;
+    }
     const date = showDate();
     const time = showTime();
     const container = document.getElementById('div0');
     const dateElement = document.createElement('p')
-    const timeElement = document.createElement('p')
     dateElement.textContent = date;
     container.appendChild(dateElement);
-    timeElement.textContent = time;
-    container.appendChild(timeElement);
+    if (flag) {
+        const timeElement = document.createElement('p')
+        timeElement.textContent = time;
+        container.appendChild(timeElement);
+    }
 }
