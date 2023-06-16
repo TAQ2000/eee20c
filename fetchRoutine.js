@@ -12,14 +12,15 @@ function isNum(value) {
 const data = JSON.parse(localStorage.getItem('data'));
 console.log(data)
 
+const day2 = (day + flag) % 8 + 1;
 const container = document.getElementById('div0');
 const dayElement = document.createElement('p')
-dayElement.textContent = `${data.content[0][0]}: ${data.content[day + flag][0]}`;
+dayElement.textContent = `${data.content[0][0]}: ${data.content[day2][0]}`;
 container.appendChild(dayElement);
 const len = 8;
 var count = 0;
 for (let i = 1; i < len; i++) {
-    if (isNum(data.content[day + flag][i])) {
+    if (isNum(data.content[day2][i])) {
         count++;
         const container1 = document.createElement('div');
         container1.classList.add('container');
