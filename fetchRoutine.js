@@ -12,7 +12,10 @@ function isNum(value) {
 const data = JSON.parse(localStorage.getItem('data'));
 console.log(data)
 
-const day2 = (day + flag) % 8 + 1;
+let day2 = day + flag;
+if (day2 > 7) {
+    day2 = day2 - 1;
+}
 const container = document.getElementById('div0');
 const dayElement = document.createElement('p')
 dayElement.textContent = `${data.content[0][0]}: ${data.content[day2][0]}`;
