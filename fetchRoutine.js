@@ -14,7 +14,7 @@ console.log(data)
 
 let day2 = day + flag;
 if (day2 > 7) {
-    day2 = day2 - 1;
+    day2 = day2 - 7;
 }
 const container = document.getElementById('div0');
 const dayElement = document.createElement('p')
