@@ -52,7 +52,7 @@ if (!count) {
     const container1 = document.createElement('div');
     container1.classList.add('container');
     const dayElement1 = document.createElement('p');
-    dayElement1.textContent = 'No class today!!! "\u{1F920}"';
+    dayElement1.textContent = 'No class today!!! \u{1F920}';
     container1.appendChild(dayElement1);
     document.body.appendChild(container1);
 }
