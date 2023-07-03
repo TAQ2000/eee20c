@@ -77,17 +77,32 @@
         <p>Upcoming Events</p>
         <ul id="ul"></ul>
     </div>
+    <div class="container">
+        <p>Teams Code</p>
+        <ul id="ul2"></ul>
+    </div>
     <script>
         const data = JSON.parse(localStorage.getItem('data'));
         const ul = document.getElementById('ul');
-        let i = 1;
+        let i = 30;
         const li = document.createElement('li');
         ul.appendChild(li);
-        li.textContent = data.content[27][i];
-        while(data.content[27][i+1] != ''){
+        li.textContent = data.content[i][5];
+        while(data.content[i+1][5] != ''){
             const li = document.createElement('li');
             ul.appendChild(li);
-            li.textContent = data.content[27][i+1];
+            li.textContent = data.content[i+1][5];
+            i++;
+        }
+        const ul2 = document.getElementById('ul2');
+        i = 30;
+        const li2 = document.createElement('li');
+        ul2.appendChild(li2);
+        li2.textContent = data.content[i][6];
+        while(data.content[i+1][6] != ''){
+            const li = document.createElement('li');
+            ul.appendChild(li);
+            li.textContent = data.content[i+1][6];
             i++;
         }
     </script>
