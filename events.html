@@ -78,7 +78,7 @@
         <ul id="ul"></ul>
     </div>
     <div class="container">
-        <p>Teams Code</p>
+        <p>Teams Joining Code</p>
         <ul id="ul2"></ul>
     </div>
     <script>
@@ -101,7 +101,7 @@
         li2.textContent = data.content[i][6];
         while(data.content[i+1][6] != ''){
             const li = document.createElement('li');
-            ul.appendChild(li);
+            ul2.appendChild(li);
             li.textContent = data.content[i+1][6];
             i++;
         }
