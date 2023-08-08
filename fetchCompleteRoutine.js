@@ -40,7 +40,7 @@ function showRoutine(day) {
         const container1 = document.createElement('div');
         container1.classList.add('container');
         const dayElement1 = document.createElement('p');
-        dayElement1.textContent = 'No class today!!! \u{1F920}';
+        dayElement1.textContent = data.content[0][0];
         container1.appendChild(dayElement1);
         div.appendChild(container1);
     }
