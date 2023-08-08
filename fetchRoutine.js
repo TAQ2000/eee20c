@@ -52,7 +52,7 @@ if (!count) {
     const container1 = document.createElement('div');
     container1.classList.add('container');
     const dayElement1 = document.createElement('p');
-    dayElement1.textContent = data.content[0][0];
+    dayElement1.textContent = data.content[8][0];
     container1.appendChild(dayElement1);
     document.body.appendChild(container1);
 }
