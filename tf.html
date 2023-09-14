@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Term Final</title>
     <script>
+        const allowedReferrer = 'https://taq2000.github.io/eee20c';
+        const referrer = document.referrer;
+        if (referrer === '') {
+            window.location.replace(allowedReferrer);
+        } else if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
+            window.location.replace(allowedReferrer);
+        }
+        
         setInterval(function () {
             location.reload();
         }, 10 * 60 * 1000);
@@ -54,10 +62,10 @@
         </div>
         <nav>
             <ul>
-                <li><a href="dailyRoutine.html">Today's Schedule</a></li>
-                <li><a href="events.html">Upcoming Events</a></li>
-                <li><a href="routine.html">Weekly Routine</a></li>
-                <li><a href="ctDetails.html">Class Test Details</a></li>
+                <li><a href="https://taq2000.github.io/eee20c/dailyRoutine">Today's Schedule</a></li>
+                <li><a href="https://taq2000.github.io/eee20c/events">Upcoming Events</a></li>
+                <li><a href="https://taq2000.github.io/eee20c/routine">Weekly Routine</a></li>
+                <li><a href="https://taq2000.github.io/eee20c/ctDetails">Class Test Details</a></li>
                 <li><a style="background-color:#870202;">Term Final Syllabus</a></li>
             </ul>
         </nav>
