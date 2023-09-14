@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Term Final</title>
+    <script>
+        setInterval(function () {
+            location.reload();
+        }, 10 * 60 * 1000);
+    </script>
+
+    <style>
+        nav {
+            background-color: #3e0000;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            display: inline-block;
+        }
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav li a:hover {
+            background-color: #870202;
+        }
+
+        .container {
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 10px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        p {
+            font-weight: bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="eee_logo.png" alt="Logo" style="width: 100%;">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dailyRoutine.html">Today's Schedule</a></li>
+                <li><a href="events.html">Upcoming Events</a></li>
+                <li><a href="routine.html">Weekly Routine</a></li>
+                <li><a href="ctDetails.html">Class Test Details</a></li>
+                <li><a style="background-color:#870202;">Term Final Syllabus</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="div"></div>
+    <script>
+        const data = JSON.parse(localStorage.getItem('data'));
+        const div = document.getElementById('div');
+        for (let i = 5; i <= 9; i++) {
+            const div1 = document.createElement('div');
+            div1.classList.add("container");
+            const p = document.createElement('p');
+            p.textContent = data.content[40][i];
+            div1.appendChild(p);
+            const ul = document.createElement('ul');
+            let j = 41;
+            const li = document.createElement('li');
+            ul.appendChild(li);
+            li.textContent = data.content[j][i];
+            while (data.content[j + 1][i] != '') {
+                const li = document.createElement('li');
+                ul.appendChild(li);
+                li.textContent = data.content[j + 1][i];
+                j++;
+            }
+            div1.appendChild(ul);
+            div.appendChild(div1);
+        } 
+    </script>
+</body>
+</html>
