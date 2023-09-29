@@ -6,9 +6,8 @@ const data = JSON.parse(localStorage.getItem('data'));
 console.log(data)
 
 function showRoutine(day) {
-    const len = 8;
     var count = 0;
-    for (let i = 1; i < len; i++) {
+    for (let i = 1; data.content[0][i]; i++) {
         if (isNum(data.content[day][i])) {
             count++;
             const div = document.getElementById('div')
