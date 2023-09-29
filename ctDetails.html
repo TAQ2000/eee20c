@@ -210,7 +210,7 @@
                 const row = table2.insertRow();
                 row.style.backgroundColor = 'lightgreen';
                 const date = new Date(ctDetails[i][0]);
-                const options1 = { year: 'numeric', month: 'long', day: 'numeric' };
+                const options1 = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' };
                 const fullDate = date.toLocaleDateString('en-US', options1);
                 const cell1 = document.createElement('td');
                 cell1.innerText = fullDate;
