@@ -10,7 +10,6 @@ function isNum(value) {
 }
 
 const data = JSON.parse(localStorage.getItem('data'));
-console.log(data)
 
 let day2 = day + flag;
 if (day2 > 7) {
