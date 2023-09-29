@@ -20,9 +20,8 @@ const container = document.getElementById('div0');
 const dayElement = document.createElement('p')
 dayElement.textContent = `${data.content[0][0]}: ${data.content[day2][0]}`;
 container.appendChild(dayElement);
-const len = 8;
 var count = 0;
-for (let i = 1; i < len; i++) {
+for (let i = 1; data.content[0][i]; i++) {
     if (isNum(data.content[day2][i])) {
         count++;
         const container1 = document.createElement('div');
