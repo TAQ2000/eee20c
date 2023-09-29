@@ -52,12 +52,17 @@ function timefy(datatime) {
         container2.classList.add('container');
         const p = document.createElement('p');
         p.classList.add('mystyle');
-        p.textContent = "Today's Special !!!";
+        if(flag) {
+            p.textContent = "Today's Special !!!";
+        }
+        else {
+            p.textContent = "Tomorrow's Special !!!";
+        }
         container2.appendChild(p);
         const ul = document.createElement('ul');
         for(let i = 0; i < tdsp.length; i++) {
             const li = document.createElement('li');
-            li.textContent = timefy(tdsp[i][1]) + ' \u2192 ' + `${tdsp[i][2]}`;
+            li.textContent = timefy(tdsp[i][1]) + ' \u2192 ' + `${tdsp[i][2]} (${tdsp[i][4]})`;
             ul.appendChild(li);
         }
         container2.appendChild(ul);
