@@ -3,7 +3,6 @@ function isNum(value) {
 }
 
 const data = JSON.parse(localStorage.getItem('data'));
-console.log(data)
 
 function showRoutine(day) {
     var count = 0;
