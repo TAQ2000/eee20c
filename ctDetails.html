@@ -185,7 +185,7 @@
                     }
                 }
             });
-        
+        const indx = [];
         let len = ctDetails.length;
         for (let i = 0; i < len; i++) {
             const dt = new Date();
@@ -196,17 +196,17 @@
                         const options = { hour: 'numeric', minute: 'numeric', hour12: false };
                         const fullTime = dt.toLocaleTimeString('en-US', options);
                         if (timefy(ctDetails[i][1]) > fullTime) {
-                            ctDetails[i][4] = true;
+                            indx[i] = true;
                         }
                         else {
-                            ctDetails[i][4] = false;
+                            indx[i] = false;
                         }
                     }
                 }
             }
         }
         for (let i = len - 1; i >= 0; i--) {
-            if (ctDetails[i][4]) {
+            if (indx[i]) {
                 const row = table2.insertRow();
                 row.style.backgroundColor = 'lightgreen';
                 const date = new Date(ctDetails[i][0]);
@@ -231,7 +231,7 @@
             }
         }
         for (let i = 0; i <= len; i++) {
-            if (!ctDetails[i][4]) {
+            if (!indx[i]) {
                 const row = table2.insertRow();
                 const date = new Date(ctDetails[i][0]);
                 const options1 = { year: 'numeric', month: 'long', day: 'numeric' };
