@@ -62,7 +62,7 @@ function timefy(datatime) {
         const ul = document.createElement('ul');
         for(let i = 0; i < tdsp.length; i++) {
             const li = document.createElement('li');
-            li.textContent = timefy(tdsp[i][1]) + ' \u2192 ' + `${tdsp[i][2]} (${tdsp[i][4]})`;
+            li.textContent = timefy(tdsp[i][1]) + ` \u2192 ${tdsp[i][2]} (${tdsp[i][4]})`;
             ul.appendChild(li);
         }
         container2.appendChild(ul);
