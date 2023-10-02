@@ -190,19 +190,23 @@
         for (let i = 0; i < len; i++) {
             const dt = new Date();
             const date = new Date(ctDetails[i][0]);
-            if (date.getFullYear() >= dt.getFullYear()) {
-                if (date.getMonth() >= dt.getMonth()) {
-                    if (date.getDate() >= dt.getDate()) {
-                        const options = { hour: 'numeric', minute: 'numeric', hour12: false };
-                        const fullTime = dt.toLocaleTimeString('en-US', options);
-                        if (timefy(ctDetails[i][1]) > fullTime) {
-                            indx[i] = true;
-                        }
-                        else {
-                            indx[i] = false;
-                        }
-                    }
+            const date1 = date.getFullYear()*10000 + date.getMonth()*100 + date.getDate();
+            const date2 = dt.getFullYear()*10000 + dt.getMonth()*100 + dt.getDate();
+            if (date1 > date2) {
+                indx[i] = true;
+            }
+            else if (date1 === date2) {
+                const options = { hour: 'numeric', minute: 'numeric', hour12: false };
+                const fullTime = dt.toLocaleTimeString('en-US', options);
+                if (timefy(ctDetails[i][1]) > fullTime) {
+                    indx[i] = true;
                 }
+                else {
+                    indx[i] = false;
+                }
+            }
+            else {
+                indx[i] = false;
             }
         }
         for (let i = len - 1; i >= 0; i--) {
