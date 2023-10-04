@@ -14,10 +14,6 @@
         } else if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
             window.location.replace(allowedReferrer);
         }
-        if (localStorage.getItem('shouldReload') === 'true') {
-            window.location.reload();
-        }
-        localStorage.setItem('shouldReload', 'true');
 
         setInterval(function () {
             location.reload();
