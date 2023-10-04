@@ -14,12 +14,13 @@
         } else if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
             window.location.replace(allowedReferrer);
         }
-        function reloadPage() {
-            if (document.visibilityState === 'visible') {
-                window.location.reload();
-            }
+        if (localStorage.getItem('shouldReload') === 'true') {
+            window.location.reload();
         }
-        document.addEventListener('visibilitychange', reloadPage);
+        localStorage.setItem('shouldReload', 'true');
+        window.addEventListener('beforeunload', function () {
+            localStorage.removeItem('shouldReload');
+        });
 
         setInterval(function () {
             location.reload();
