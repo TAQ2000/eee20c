@@ -15,7 +15,6 @@
             window.location.replace(allowedReferrer);
         }
         if (localStorage.getItem('shouldReload') === 'true') {
-            localStorage.removeItem('shouldReload');
             window.location.reload();
         }
         localStorage.setItem('shouldReload', 'true');
