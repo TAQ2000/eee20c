@@ -83,25 +83,25 @@
     <script>
         const data = JSON.parse(localStorage.getItem('data'));
         const ul = document.getElementById('ul');
-        let i = 30;
+        let i = 1;
         const li = document.createElement('li');
         ul.appendChild(li);
-        li.textContent = data.content[i][5];
-        while(data.content[i+1][5] != ''){
+        li.textContent = data.content[27][i];
+        while(data.content[27][i+1] != ''){
             const li = document.createElement('li');
             ul.appendChild(li);
-            li.textContent = data.content[i+1][5];
+            li.textContent = data.content[27][i+1];
             i++;
         }
         const ul2 = document.getElementById('ul2');
-        i = 30;
+        i = 1;
         const li2 = document.createElement('li');
         ul2.appendChild(li2);
-        li2.textContent = data.content[i][6];
-        while(data.content[i+1][6] != ''){
+        li2.textContent = data.content[28][i];
+        while(data.content[28][i+1] != ''){
             const li = document.createElement('li');
             ul2.appendChild(li);
-            li.textContent = data.content[i+1][6];
+            li.textContent = data.content[28][i+1];
             i++;
         }
     </script>
