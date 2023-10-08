@@ -103,7 +103,7 @@
             const li = document.createElement('li');
             ul.appendChild(li);
             li.textContent = data.content[j][i];
-            while (data.content[j + 1][i] != '') {
+            while (data.content[j + 1][i]) {
                 const li = document.createElement('li');
                 ul.appendChild(li);
                 li.textContent = data.content[j + 1][i];
