@@ -101,7 +101,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="https://taq2000.github.io/eee20c/dailyRoutine">Today's Schedule</a></li>
+                <li><a id="sch" href="https://taq2000.github.io/eee20c/dailyRoutine"></a></li>
                 <li><a href="https://taq2000.github.io/eee20c/events">Upcoming Events</a></li>
                 <li><a style="background-color:#870202;">Weekly Routine</a></li>
                 <li><a href="https://taq2000.github.io/eee20c/ctDetails">Class Test Details</a></li>
@@ -122,6 +122,16 @@
         <span class="routine">Click <a href="https://bueteee.edupage.org/timetable/view.php?num=17&class=-38" target="_blank" style="color:blue">here</a> to see complete routine</span>
     </div>
     <div id="div"></div>
+    <script>
+        const hr = new Date();
+        const sch = document.getElementById('sch');
+        if (hr.getHours() > 17) {
+            sch.textContent = "Tomorrow's Schedule";
+        }
+        else {
+            sch.textContent = "Today's Schedule";
+        }
+    </script>
     <script>
         const today = new Date();
         const day = (today.getDay() + 1) % 7 + 1;
