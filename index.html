@@ -28,16 +28,13 @@
         <h2>Department of Electrical and Electronic Engineering</h2>
         <h2>Batch:20, Section:C</h2>
         <br>
-        <p id="sch" style = "color: blue;"></p>
+        <p id="sch" style = "color: blue;">Please wait while we redirect you to today's schedule...</p>
     </div>
     <script>
         const hr = new Date();
         const sch = document.getElementById('sch');
         if (hr.getHours() > 17) {
             sch.textContent = "Please wait while we redirect you to tomorrow's schedule...";
-        }
-        else {
-            sch.textContent = "Please wait while we redirect you to today's schedule...";
         }
     </script>
     <script>
