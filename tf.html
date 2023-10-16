@@ -77,7 +77,7 @@
         </div>
         <nav>
             <ul>
-                <li><a id="sch" href="https://taq2000.github.io/eee20c/dailyRoutine"></a></li>
+                <li><a id="sch" href="https://taq2000.github.io/eee20c/dailyRoutine">Today's Schedule</a></li>
                 <li><a href="https://taq2000.github.io/eee20c/events">Upcoming Events</a></li>
                 <li><a href="https://taq2000.github.io/eee20c/routine">Weekly Routine</a></li>
                 <li><a href="https://taq2000.github.io/eee20c/ctDetails">Class Test Details</a></li>
@@ -94,9 +94,6 @@
         const sch = document.getElementById('sch');
         if (hr.getHours() > 17) {
             sch.textContent = "Tomorrow's Schedule";
-        }
-        else {
-            sch.textContent = "Today's Schedule";
         }
     </script>
     <script>
