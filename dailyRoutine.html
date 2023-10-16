@@ -75,7 +75,7 @@
         </div>
         <nav>
             <ul>
-                <li><a style="background-color:#870202;">Today's Schedule</a></li>
+                <li><a id="sch" style="background-color:#870202;">Today's Schedule</a></li>
                 <li><a href="https://taq2000.github.io/eee20c/events">Upcoming Events</a></li>
                 <li><a href="https://taq2000.github.io/eee20c/routine">Weekly Routine</a></li>
                 <li><a href="https://taq2000.github.io/eee20c/ctDetails">Class Test Details</a></li>
@@ -86,6 +86,16 @@
     <div id="div0" class="container2"></div>
     <script src="dateTime.js"></script>
     <script src="fetchRoutine.js"></script>
+    <script>
+        const hr = new Date();
+        const sch = document.getElementById('sch');
+        if (hr.getHours() > 17) {
+            sch.textContent = "Tomorrow's Schedule";
+        }
+        else {
+            sch.textContent = "Today's Schedule";
+        }
+    </script>
 </body>
 
 </html>
