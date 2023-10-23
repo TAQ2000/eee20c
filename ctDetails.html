@@ -50,6 +50,10 @@
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
+        .table-container {
+            overflow: auto;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -105,18 +109,18 @@
 
     <br>
     
-    <table id="myTable">
-        <tbody>
-        </tbody>
-    </table>
-
-    <br><br>
-    <p>**Upcoming**</p>
-    
-    <table id="myTable2">
-        <tbody>
-        </tbody>
-    </table>
+    <div class="table-container">
+        <table id="myTable">
+            <tbody>
+            </tbody>
+        </table>
+        <br>
+        <p>**Upcoming**</p>
+        <table id="myTable2">
+            <tbody>
+            </tbody>
+        </table>
+    </div>
 
     <script>
         const hr = new Date();
