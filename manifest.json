@@ -1,32 +1,32 @@
 {
     "name": "EEE20C",
     "short_name": "eee20c",
-    "start_url": "/index.html",
+    "start_url": "https://taq2000.github.io/eee20c",
     "display": "standalone",
-    "background_color": "#FFE9D2",
-    "theme_color": "#FFE1C4",
+    "background_color": "#F26B6B",
+    "theme_color": "#620000",
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "/Javascript/BUET_LOGO_144x144.png",
+            "src": "/BUET_LOGO_144x144.png",
             "type": "image/png",
             "sizes": "144x144",
             "purpose": "any"
         },
         {
-            "src": "/Javascript/BUET_LOGO_144x144.png",
+            "src": "/BUET_LOGO_144x144.png",
             "type": "image/png",
             "sizes": "144x144",
             "purpose": "maskable"
         },
         {
-            "src": "/Javascript/BUET_LOGO_192x192.png",
+            "src": "/BUET_LOGO_192x192.png",
             "type": "image/png",
             "sizes": "192x192",
             "purpose": "any"
         },
         {
-            "src": "/Javascript/BUET_LOGO_512x512.png",
+            "src": "/BUET_LOGO_512x512.png",
             "type": "image/png",
             "sizes": "512x512",
             "purpose": "any"
