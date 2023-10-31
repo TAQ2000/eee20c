@@ -19,31 +19,78 @@
         }, 10 * 60 * 1000);
     </script>
     <style>
-        header {
-            position: sticky;
-            top: 0;
+        @media (max-width: 1440px) {
+            header {
+                position: sticky;
+                top: 0;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #250809;
+                padding: 0;
+                color: #ffffff;
+            }
+            .nav-links {
+                text-align: center;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            .nav-links li {
+                display: inline-block;
+            }
+            .nav-links a {
+                color: white;
+                display: block;
+                text-align: center;
+                padding: 10px 10px;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+            .ctab {
+                background-color: #870202;
+            }
         }
-        nav {
-            background-color: #3e0000;
-        }
-        nav ul {
-            text-align: center;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        nav li {
-            display: inline-block;
-        }
-        nav li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 14px;
-            text-decoration: none;
-        }
-        nav li a:hover {
-            background-color: #870202;
+        @media (min-width: 1441px) {
+            header {
+                position: sticky;
+                top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #250809;
+                padding: 0;
+                color: #ffffff;
+            }
+            .logo {
+                width: 50%;
+                display: inline-block;
+            }
+            .nav-links {
+                text-align: right;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+            .nav-links li {
+                display: inline-block;
+                margin-right: 20px;
+            }
+            .nav-links a {
+                color: white;
+                display: block;
+                text-align: center;
+                font-size: large;
+                padding: 10px 10px;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+            .nav-links a:hover {
+                color: #ff0000;
+            }
+            a.ctab {
+                color: #ff0000;
+            }
         }
 
         .container {
@@ -100,19 +147,17 @@
     <script src="app.js"></script>
 </head>
 <body>
-    <div class="logo">
-        <img src="eee_logo.png" alt="Logo" style="width: 100%;">
-    </div>
     <header>
-        <nav>
-            <ul>
-                <li><a id="sch" href="https://taq2000.github.io/eee20c/dailyRoutine">Today's Schedule</a></li>
-                <li><a href="https://taq2000.github.io/eee20c/events">Upcoming Events</a></li>
-                <li><a href="https://taq2000.github.io/eee20c/routine">Weekly Routine</a></li>
-                <li><a style="background-color:#870202;">Class Test Details</a></li>
-                <!-- <li><a href="https://taq2000.github.io/eee20c/tf">Term Final Syllabus</a></li> -->
-            </ul>
-        </nav>
+        <div class="logo">
+            <img src="eee_logo.png" alt="Logo" style="width: 100%;">
+        </div>
+        <ul class="nav-links">
+            <li><a id="sch" href="https://taq2000.github.io/eee20c/dailyRoutine">Today's Schedule</a></li>
+            <li><a href="https://taq2000.github.io/eee20c/events">Upcoming Events</a></li>
+            <li><a href="https://taq2000.github.io/eee20c/routine">Weekly Routine</a></li>
+            <li><a class="ctab">Class Test Details</a></li>
+            <!-- <li><a href="https://taq2000.github.io/eee20c/tf">Term Final Syllabus</a></li> -->
+        </ul>
     </header>
 
     <br>
