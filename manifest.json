@@ -8,25 +8,25 @@
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "/eee20c/BUET_LOGO_144x144.png",
+            "src": "/eee20c/EEE20C_LOGO_144x144.png",
             "type": "image/png",
             "sizes": "144x144",
             "purpose": "any"
         },
         {
-            "src": "/eee20c/BUET_LOGO_144x144.png",
+            "src": "/eee20c/EEE20C_LOGO_144x144.png",
             "type": "image/png",
             "sizes": "144x144",
             "purpose": "maskable"
         },
         {
-            "src": "/eee20c/BUET_LOGO_192x192.png",
+            "src": "/eee20c/EEE20C_LOGO_192x192.png",
             "type": "image/png",
             "sizes": "192x192",
             "purpose": "any"
         },
         {
-            "src": "/eee20c/BUET_LOGO_512x512.png",
+            "src": "/eee20c/EEE20C_LOGO_512x512.png",
             "type": "image/png",
             "sizes": "512x512",
             "purpose": "any"
