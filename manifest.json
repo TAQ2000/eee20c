@@ -14,9 +14,9 @@
             "purpose": "any"
         },
         {
-            "src": "/eee20c/EEE20C_LOGO_144x144.png",
+            "src": "/eee20c/EEE20C_LOGO_512x512.png",
             "type": "image/png",
-            "sizes": "144x144",
+            "sizes": "512x512",
             "purpose": "maskable"
         },
         {
