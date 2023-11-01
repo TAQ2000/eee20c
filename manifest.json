@@ -1,7 +1,7 @@
 {
     "name": "EEE20C",
     "short_name": "EEE20C",
-    "start_url": "https://taq2000.github.io/eee20c/dailyRoutine",
+    "start_url": "/eee20c/index.html",
     "display": "standalone",
     "background_color": "#F26B6B",
     "theme_color": "#620000",
