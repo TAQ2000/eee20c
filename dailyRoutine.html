@@ -166,16 +166,21 @@
     </script>
     <script>
         const screenWidth = window.innerWidth;
-        console.log(screenWidth)
         let paddingValue = 0;
-        if (screenWidth <= 1440) {
-            paddingValue = screenWidth*10/325;
-            console.log(paddingValue)
-            const class_style = document.querySelectorAll('.nav-links a');
-            class_style.forEach(anchor => {
-                anchor.style.padding = '10px ' + paddingValue + 'px';
-            });
-        }
+        if (screenWidth <= 325) paddingValue = 9;
+        else if (screenWidth <= 350) paddingValue = 10+(screenWidth-325)/10;
+        else if (screenWidth <= 400) paddingValue = 10+(screenWidth-325)/5;
+        else if (screenWidth <= 450) paddingValue = 10+(screenWidth-325)/4.5;
+        else if (screenWidth <= 630) paddingValue = 10+(screenWidth-450)/10;
+        else if (screenWidth <= 750) paddingValue = 10+(screenWidth-450)/30;
+        else if (screenWidth <= 800) paddingValue = 10+(screenWidth-600)/100;
+        else if (screenWidth <= 1000) paddingValue = 10+(screenWidth-800)/10;
+        else if (screenWidth <= 1200) paddingValue = 10+(screenWidth-800)/9;
+        else if (screenWidth <= 1440) paddingValue = 10+(screenWidth-800)/10;
+        const class_style = document.querySelectorAll('.nav-links a');
+        class_style.forEach(anchor => {
+            anchor.style.padding = '10px ' + paddingValue + 'px';
+        });
     </script>
     <script src="install.js"></script>
     <script src="dateTime.js"></script>
